@@ -1,6 +1,16 @@
 ---
 layout: default
 ---
+# Projects
+
+List of Projects
+
+## Time Series Analysis with ARIMA and SARIMA
+
+
+
+
+
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
