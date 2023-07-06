@@ -27,8 +27,9 @@ _All plots and tables created by the module are saved into the data directory. T
 * Model Fitting
      * performs in-sample non-rolling, in-sample 1-step-ahead rolling, and out-of-sample rolling forcasts for each dataset using either ARIMA or SARIMA
      * creates plots for each of the forecasting methods
-     * 
+     * creates tables for each forecasting method that displays AIC, MAPE, and RMSE metric values for the predict() and forecast() functions for each dataset 
 * Diagnostics
+     * 
 * Cross Validation
 * Auto ARIMA
 * File Handling
