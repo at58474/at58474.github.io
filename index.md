@@ -9,9 +9,15 @@ Below is a list of projects showcasing some of the skills I have developed throu
 
 **Project Overview**: The primary goal of this project was to accurately forecast river flow for recreational purposes by using historical observations collected from the United States Geological Survey (USGS). Another goal was to develop a Python package for performing time series analysis and forecasting on a given dataset, and organizing the results to be easily accessed. The main features of this module are summarized below:
 
-* Preprocessing: merging multiple datasets, imputing missing data, data resampling, column renaming and deletion, reading raw data with a user defined delimiter, 
+* Preprocessing
+     * merging multiple datasets
+     * imputing missing data
+     * data resampling
+     * column renaming and deletion
+     * reading raw data with a user defined delimiter
 * Dataframe Creation
-* Parameter Estimation: plots and tables rendered for parameter estimation can be viewed in the directory structure explanation at the bottom of the readme file
+* Parameter Estimation
+     * plots and tables rendered for parameter estimation can be viewed in the directory structure explanation at the bottom of the readme file
 * Model Fitting
 * Diagnostics
 * Cross Validation
