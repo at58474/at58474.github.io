@@ -7,18 +7,26 @@ Below is a list of projects showcasing some of the skills I have developed throu
 
 ## Time Series Analysis with ARIMA and SARIMA
 
-**Project Overview**: The primary goal of this project was to accurately forecast river flow for recreational purposes by using historical observations collected from the United States Geological Survey (USGS). Another goal was to develop a Python package for performing time series analysis and forecasting on a given dataset, and organizing the results to be easily accessed. The main features of this module are summarized below:
+**Project Overview**: The primary goal of this project was to accurately forecast river flow for recreational purposes by using historical observations collected from the United States Geological Survey (USGS). Another goal was to develop a Python package for performing time series analysis and forecasting on a given dataset, and organizing the results to be easily accessed. The final objective of this project was to determine which model attributes had the greatest impact on forecasting performance. The attributes that were analyzed were the time interval of the data, method of aggregation, and which evaluation metric was the best for determining model order when running the auto-ARIMA module. The main features of this module are summarized below:
 
 * Preprocessing
      * merging multiple datasets
      * imputing missing data
+     * removing duplicates
      * data resampling
      * column renaming and deletion
      * reading raw data with a user defined delimiter
+     * setting row caps
 * Dataframe Creation
 * Parameter Estimation
-     * plots and tables rendered for parameter estimation can be viewed in the directory structure explanation at the bottom of the readme file
+     * the following plots and tables are rendered for parameter estimation and are saved into a directory structure as explained in the readme file
+     * cheack for stationarity with ADF test and automatically differences any non-stationary datasets
+     * creates ACF and PACF plots for all stationary data
+     * creates decomposition plots for each dataset that show trend, seasonality, and residual attributes
 * Model Fitting
+     * performs in-sample non-rolling, in-sample 1-step-ahead rolling, and out-of-sample rolling forcasts for each dataset using either ARIMA or SARIMA
+     * creates plots for each of the forecasting methods
+     * 
 * Diagnostics
 * Cross Validation
 * Auto ARIMA
