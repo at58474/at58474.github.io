@@ -3,12 +3,22 @@ layout: default
 ---
 # Projects
 
-List of Projects
+Below is a list of projects showcasing some of the skills I have developed through undergraduate and masters level coursework, certifications, and self study.
 
 ## Time Series Analysis with ARIMA and SARIMA
 
+**Project Overview**: The primary goal of this project was to accurately forecast river flow for recreational purposes by using historical observations collected from the United States Geological Survey (USGS). Another goal was to develop a Python package for performing time series analysis and forecasting on a given dataset, and organizing the results to be easily accessed. The main features of this module are summarized below:
 
+* Preprocessing: merging multiple datasets, imputing missing data, data resampling, column renaming and deletion, reading raw data with a user defined delimiter, 
+* Dataframe Creation
+* Parameter Estimation: plots and tables rendered for parameter estimation can be viewed in the directory structure explanation at the bottom of the readme file
+* Model Fitting
+* Diagnostics
+* Cross Validation
+* Auto ARIMA
+* File Handling
 
+Module for preprocessing raw data, creating dataframes, generating plots and tables for parameter estimation, fitting the data to the models, producing diagnostic outputs for model analysis, creating forecast and cross validation results plots, running auto-ARIMA and auto-SARIMA methods, and file handling.
 
 
 
@@ -104,7 +114,7 @@ end
 
 ### Small image
 
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+![Octocat](https://github.com/at58474/at58474.github.io/blob/master/assets/img/manuscript_cover.png)
 
 ### Large image
 
