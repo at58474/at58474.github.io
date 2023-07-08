@@ -11,6 +11,8 @@ Below is a list of projects showcasing some of the skills I have developed throu
 
 _All plots and tables created by the module are saved into the data directory. The structure of this directory is explained in the readme file_
 
+### Time Series Module Overview (tsmodule.py)
+
 * Preprocessing
      * merging multiple datasets
      * imputing missing data
@@ -34,13 +36,23 @@ _All plots and tables created by the module are saved into the data directory. T
 * Auto ARIMA
 * File Handling
 
-Module for preprocessing raw data, creating dataframes, generating plots and tables for parameter estimation, fitting the data to the models, producing diagnostic outputs for model analysis, creating forecast and cross validation results plots, running auto-ARIMA and auto-SARIMA methods, and file handling.
+### Configuration File (config.py)
+
+The configuration file contains customizable settings and parameters that can be used to run analysis and forecasting with ARIMA or SARIMA on any given time series dataset. A detailed explanation of each paramater can be found in the readme file.
+
+[README.md](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/README.md)
+
+
+
+
+
+[Link to another page](./another-page.html)
 
 
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-[Link to another page](./another-page.html).
+[README.md](./Time-Series-ARIMA-SARIMA/README.md).
 
 There should be whitespace between paragraphs.
 
