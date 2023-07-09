@@ -11,6 +11,12 @@ Below is a list of projects showcasing some of the skills I have developed throu
 
 _All plots and tables created by the module are saved into the data directory. The structure of this directory is explained in the readme file_
 
+[README.md](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/README.md)
+
+_A detailed composition of this project can be found here:_
+
+[Manuscript](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/TS_Analysis_RFG.pdf)
+
 ### Time Series Module Overview (tsmodule.py)
 
 * Preprocessing
@@ -22,6 +28,8 @@ _All plots and tables created by the module are saved into the data directory. T
      * reading raw data with a user defined delimiter
      * setting row caps
 * Dataframe Creation
+     * Resamples the dataset into time intervals denoted by the parameter frequency_list, then by using the first(), mean(), and max() aggregation methods. This results in the number of datasets equating to the number of items contained in frequency_list multiplied by 3.
+     * 
 * Parameter Estimation
      * check for stationarity with ADF test and automatically differences any non-stationary datasets
      * creates ACF and PACF plots for all stationary data
@@ -31,8 +39,11 @@ _All plots and tables created by the module are saved into the data directory. T
      * creates plots for each of the forecasting methods
      * creates tables for each forecasting method that displays AIC, MAPE, and RMSE metric values for the predict() and forecast() functions for each dataset 
 * Diagnostics
-     * 
+     * Plots for each forecasting method are created using results from SARIMAX predict() and SARIMAX forecast() for each dataset.
+     * The diagnostic plots included are standardized residuals, histogram, normal Q-Q, and ACF plot of residuals.
+     * Two sets of plots are generated using both statsmodels plot_diagnostics() and custom methods.
 * Cross Validation
+     * 
 * Auto ARIMA
 * File Handling
 
