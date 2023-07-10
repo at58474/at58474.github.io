@@ -26,10 +26,9 @@ _A detailed composition of this project can be found here:_
      * data resampling
      * column renaming and deletion
      * reading raw data with a user defined delimiter
-     * setting row caps
 * Dataframe Creation
      * Resamples the dataset into time intervals denoted by the parameter frequency_list, then by using the first(), mean(), and max() aggregation methods. This results in the number of datasets equating to the number of items contained in frequency_list multiplied by 3.
-     * 
+     * A row cap parameter is included here to reduce the time to run the ARIMA/SARIMA models, if needed.
 * Parameter Estimation
      * check for stationarity with ADF test and automatically differences any non-stationary datasets
      * creates ACF and PACF plots for all stationary data
@@ -43,9 +42,15 @@ _A detailed composition of this project can be found here:_
      * The diagnostic plots included are standardized residuals, histogram, normal Q-Q, and ACF plot of residuals.
      * Two sets of plots are generated using both statsmodels plot_diagnostics() and custom methods.
 * Cross Validation
-     * 
+     * The number of cross validation groups and the size of each cross validaiton testing set can be set by the user
+     * The datasets used can be specified by providing the dictionary key in the configuraiton file
+     * Line plots displaying in-sample and out-of-sample resutls for each group in every dataset are created and stored in the cv_plots directory. RMSE and MAPE results are also provided in the graphs.
+     * A table that contains every cross validaiton group for each dataset along with MAPE and RMSE values is created for comparing how well each model performed.
 * Auto ARIMA
+     * The Auto-ARIMA class can be passed 1 time interval dataset at a time and will iterate through each parameter combination in the user-defined ranges provided in the configuration file.
+     * The resulting outputs are three pdf files containing tables that include the top 20 results sorted by AIC, MAPE, and RMSE. For example, file 1 contains results sorted by AIC, file 2 contains results sorted by MAPE, and file 3 contains results sorted by RMSE.
 * File Handling
+     * File handling can be turned on or off in the configuration file. When set to True it automatically deletes any non-archived files before running the program. File archiving is not currently implemented and must be done by hand, but the folder structure for archiving the results is included.
 
 ### Configuration File (config.py)
 
