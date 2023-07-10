@@ -15,7 +15,7 @@ _All plots and tables created by the module are saved into the data directory. T
 
 _A detailed composition of this project can be found here:_
 
-[Manuscript](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/TS_Analysis_RFG.pdf)
+[Time Series Model Performance Analysis with ARIMA and SARIMA for Streamflow Forecasting in the Appalachia](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/TS_Analysis_RFG.pdf)
 
 ### Time Series Module Overview (tsmodule.py)
 
