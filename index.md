@@ -19,6 +19,8 @@ _A detailed composition of this project can be found here:_
 
 ### Time Series Module Overview (tsmodule.py)
 
+[tsmodule.py](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/tsmodule.py)
+
 * Preprocessing
      * merging multiple datasets
      * imputing missing data
@@ -54,12 +56,23 @@ _A detailed composition of this project can be found here:_
 
 ### Configuration File (config.py)
 
+[config.py](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/config.py)
+
 The configuration file contains customizable settings and parameters that can be used to run analysis and forecasting with ARIMA or SARIMA on any given time series dataset. A detailed explanation of each paramater can be found in the readme file.
 
 [README.md](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/README.md)
 
+### Configuration File Validation (config_validation.py)
 
+[config_validation.py](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/config_validation.py)
 
+This is a parameter validation module that ensures the user-defined settings meet the requirements of the program. If an error is found an assertion will be thrown and the program will terminate until the parameter has been corrected.
+
+### Time Series Module Controller (controller.py)
+
+[controller.py](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/controller.py)
+
+This file imports the validated program settings and controls which classes from the time series module will be initialized. After modifying the configuration file to include the desired parameters, run this file to create the results that can be found in the plots directory.
 
 
 [Link to another page](./another-page.html)
