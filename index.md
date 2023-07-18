@@ -3,8 +3,6 @@ layout: default
 ---
 # Projects
 
-Below is a list of projects showcasing some of the skills I have developed through undergraduate and masters level coursework, certifications, and self study.
-
 ## Time Series Analysis with ARIMA and SARIMA
 
 **Project Overview**: The primary goal of this project was to accurately forecast river flow for recreational purposes by using historical observations collected from the United States Geological Survey (USGS). Another goal was to develop a Python package for performing time series analysis and forecasting on a given dataset, and organizing the results to be easily accessed. The final objective of this project was to determine which model attributes had the greatest impact on forecasting performance. The attributes that were analyzed were the time interval of the data, method of aggregation, SARIMAX forecast() vs predict(), and which evaluation metric was the best for determining model order when running the auto-ARIMA module. The main features of this module are summarized below:
