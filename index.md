@@ -43,7 +43,7 @@ _A detailed composition of this project can be found here:_
 * Cross Validation
      * The number of cross validation groups and the size of each cross validaiton testing set can be set by the user
      * The datasets used can be specified by providing the dictionary key in the configuraiton file
-     * Line plots displaying in-sample and out-of-sample resutls for each group in every dataset are created and stored in the cv_plots directory. RMSE and MAPE results are also provided in the graphs.
+     * Line plots displaying in-sample and out-of-sample results for each group in every dataset are created and stored in the cv_plots directory. RMSE and MAPE results are also provided in the graphs.
      * A table that contains every cross validaiton group for each dataset along with MAPE and RMSE values is created for comparing how well each model performed
 * Auto ARIMA
      * The Auto-ARIMA class can be passed 1 time interval dataset at a time and will iterate through each parameter combination in the user-defined ranges provided in the configuration file
