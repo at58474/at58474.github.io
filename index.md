@@ -3,8 +3,8 @@ layout: default
 ---
 # Projects
 
-[Time Series Analysis with ARIMA and SARIMA](#RFG_Time_Series)
-[Protein Data Bank Crystallization Conditions Analysis](#PDB_Analysis)
+* [Time Series Analysis with ARIMA and SARIMA](#RFG_Time_Series)
+* [Protein Data Bank Crystallization Conditions Analysis](#PDB_Analysis)
 
 ## Time Series Analysis with ARIMA and SARIMA
 <a name="RFG_Time_Series"></a>
