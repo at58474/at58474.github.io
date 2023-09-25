@@ -7,6 +7,10 @@ layout: default
   
 * [Protein Data Bank Crystallization Conditions Analysis](#PDB_Analysis)
 
+\
+\
+\
+
 ## Time Series Analysis with ARIMA and SARIMA
 <a name="RFG_Time_Series"></a>
 **Project Overview**: The primary goal of this project was to accurately forecast river flow for recreational purposes by using historical observations collected from the United States Geological Survey (USGS). Another goal was to develop a Python package for performing time series analysis and forecasting on a given dataset, and organizing the results to be easily accessed. The final objective of this project was to determine which model attributes had the greatest impact on forecasting performance. The attributes that were analyzed were the time interval of the data, method of aggregation, SARIMAX forecast() vs predict(), and which evaluation metric was the best for determining model order when running the auto-ARIMA module. The main features of this module are summarized below:
@@ -75,13 +79,9 @@ This is a parameter validation module that ensures the user-defined settings mee
 
 This file imports the validated program settings and controls which classes from the time series module will be initialized. After modifying the configuration file to include the desired parameters, run this file to create the results that can be found in the plots directory.
 
-
-
-
-
-
-
-
+\
+\
+\
 
 ## Protein Data Bank Crystallization Conditions Analysis
 <a name="PDB_Analysis"></a>
