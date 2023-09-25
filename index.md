@@ -3,8 +3,11 @@ layout: default
 ---
 # Projects
 
-## Time Series Analysis with ARIMA and SARIMA
+[Time Series Analysis with ARIMA and SARIMA](#RFG_Time_Series)
+[Protein Data Bank Crystallization Conditions Analysis](#PDB_Analysis)
 
+## Time Series Analysis with ARIMA and SARIMA
+<a name="RFG_Time_Series"></a>
 **Project Overview**: The primary goal of this project was to accurately forecast river flow for recreational purposes by using historical observations collected from the United States Geological Survey (USGS). Another goal was to develop a Python package for performing time series analysis and forecasting on a given dataset, and organizing the results to be easily accessed. The final objective of this project was to determine which model attributes had the greatest impact on forecasting performance. The attributes that were analyzed were the time interval of the data, method of aggregation, SARIMAX forecast() vs predict(), and which evaluation metric was the best for determining model order when running the auto-ARIMA module. The main features of this module are summarized below:
 
 _All plots and tables created by the module are saved into the data directory. The structure of this directory is explained in the readme file_
@@ -80,7 +83,7 @@ This file imports the validated program settings and controls which classes from
 
 
 ## Protein Data Bank Crystallization Conditions Analysis
-
+<a name="PDB_Analysis"></a>
 **Project Overview**: The Protein Data Bank (PDB) is where the archives for biological macromolecule 3D structure data are maintained and stored. These archives are freely available to the public and the data used in this project was downloaded from ftp.wwpdb.org/pub/pdb/data/structures/all. Although the archive contains data for proteins, DNA, and RNA, protein data is solely used in this project. Only 3D structure data that was experimentally determined is used, compared to structure models computed using AI programs such as AlphaFold.
 
 **The main goals of this project are**: 
