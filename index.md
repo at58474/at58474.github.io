@@ -70,3 +70,39 @@ This is a parameter validation module that ensures the user-defined settings mee
 [controller.py](https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/controller.py)
 
 This file imports the validated program settings and controls which classes from the time series module will be initialized. After modifying the configuration file to include the desired parameters, run this file to create the results that can be found in the plots directory.
+
+
+
+
+
+
+
+
+
+## Protein Data Bank Crystallization Conditions Analysis
+
+**Project Overview**: The Protein Data Bank (PDB) is where the archives for biological macromolecule 3D structure data are maintained and stored. These archives are freely available to the public and the data used in this project was downloaded from ftp.wwpdb.org/pub/pdb/data/structures/all. Although the archive contains data for proteins, DNA, and RNA, protein data is solely used in this project. Only 3D structure data that was experimentally determined is used, compared to structure models computed using AI programs such as AlphaFold.
+
+**The main goals of this project are**: 
+
+* To extract the following from the PDB archive (204,170 files, 290 GB) into a Pandas DataFrame:
+     * Protein ID
+     * FASTA Sequence
+     * Solvent Concentration
+     * Matthew's Coefficient
+     * Crystallography Type
+     * Vapor Diffusion Method
+     * pH
+     * Precipitates: Split on concentration metric into 2 groups (percentage or molarity)
+          * Organic Precipitates (percentage)
+          * Salt Precipitates (molarity)
+          * _Note: Some chemicals may be inappropriately labeled as organic or salt_
+        
+* To analyze the extracted data and gain insights that could be useful in future crystallization of novel proteins using traditional experimental methodologies. Some of the charts and graphs generated are as follows:
+    * Table and bar graphs sumarizing missing data
+    * Heatmap showing nullity correlation between extracted conditions, which shows if the presence of one condiditon affects the presence of another
+    * Table that contains all unique chemicals found in the PDB along with number of occurences
+    * Table and pie chart showing top 10 chemicals found in the PDB
+    * Scatter plots that show the top 10 chemicals by number of occurences with concentration of each occurance plotted (shows concentration grouping)
+    * Bar chart that displays pH of every crystalliation cocktail found in the PDB, which gives insight to the most used pH values for crystallizing proteins
+    * Table and pie chart that groups pH values into whole number groups to better summarize most frequently used pH values
