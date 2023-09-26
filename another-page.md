@@ -2,7 +2,13 @@
 layout: default
 ---
 
-## Welcome to another page
+## PDB Data Analysis
+
+
+
+
+**The dataframe that was created from the ccmodule.py module contains the following data**:
+![Missing Data Table](/assets/img/PDB_missing_data_table "Missing Data Table")
 
 
 
