@@ -42,6 +42,12 @@ From this the following can be inferred:
 1. If non Null data appears in the Crystallography_Type column, then data most likely also appears in the Vapor_Diffusion column, and vice versa.
 2. If non Null data appears in the Organic_Precipitates column, then data most likely also appears in the Salt_Precipitates column, and vice versa.
 
+```python
+msno.heatmap(conditions_df, cmap='YlGnBu')
+```
+
+[![PDB Heatmap](/assets/img/nullity_correlation_heatmap.png "PDB Heatmap")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/nullity_correlation_heatmap.png)
+
 
 # "HTML for Organic Precipitate TOP10 Pie Chart"
 
