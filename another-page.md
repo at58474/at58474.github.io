@@ -4,10 +4,10 @@ layout: single_column
 
 ## PDB Data Analysis
 
-It works with almost all markdown flavours (the below blank line matters).
+---  
 
----
-> The following data was extracted from the Protein Data Bank:  
+> <img src="[https://mma.prnewswire.com/media/1513369/Educative_Logo.jpg](https://github.com/at58474/at58474.github.io/blob/master/assets/img/notebook.jpg)"  width="50" height="50"> The following data was extracted from the Protein Data Bank:
+
 ---  
 
 ![Missing Data Table](/assets/img/PDB_missing_data_table.png "Missing Data Table")  
