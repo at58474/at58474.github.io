@@ -105,7 +105,7 @@ salt_df_stacked = salt_df_stacked.reindex(columns = salt_df_stacked.columns.toli
 
 ---  
 
-> The stacked dictionaries in the precipitates columns then needed to be unpacked and the concentrations and chemicals then needed to be stored in the appropriate columns. This required more work since the dictionaries > are stored in the Pandas dataframe as a Python object, which is a string and not an actualy dictionary. A function was created that moved the keys and values into the corresponding columns.  
+> The stacked dictionaries in the precipitates columns then needed to be unpacked and the concentrations and chemicals then needed to be stored in the appropriate columns. This required more work since the dictionaries are stored in the Pandas dataframe as a Python object, which is a string and not an actualy dictionary. A function was created that moved the keys and values into the corresponding columns.  
 
 ---  
 
