@@ -12,13 +12,22 @@ layout: single_column
 
 ![Missing Data Table](/assets/img/PDB_missing_data_table.png "Missing Data Table")  
 
-The first five rows of the dataframe created by the ccmodule.py module and which contains all of the extracted data is displayed below:  
+---  
+
+> The first five rows of the dataframe created by the ccmodule.py module and which contains all of the extracted data is displayed below:
+
+---  
+
 
 _Click image to view larger version_
 
 [![Extracted Conditions Dataframe](/assets/img/conditions_df_first5.png "Extracted Conditions Dataframe")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/conditions_df_first5.png)  
 
-To get a better visualization of the missing data, the Python library missingo was used to create a bar chart showing each column with the number of non Null values found in the conditions dataframe.  
+---  
+
+> To get a better visualization of the missing data, the Python library missingo was used to create a bar chart showing each column with the number of non Null values found in the conditions dataframe.  
+
+---  
 
 ```python
 msno.bar(conditions_df)
