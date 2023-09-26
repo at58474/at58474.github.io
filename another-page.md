@@ -48,6 +48,25 @@ msno.heatmap(conditions_df, cmap='YlGnBu')
 
 [![PDB Heatmap](/assets/img/nullity_correlation_heatmap.png "PDB Heatmap")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/nullity_correlation_heatmap.png)  
 
+Since the crystalliation cocktails consisted of a varying number of chemicals, they were stored as a list of dictionaries. This allows for multiple chemicals along with their concentrations to be stored in a single dataframe column.  
+The following is an example of the list of dictionaries for the salt precipitates contained in the crystallization cocktail for the protein with an ID of 1A00:  
+
+[{'10 MM': 'POTASSIUM PHOSPHATE'}, {'100 MM': 'POTASSIUM CHLORIDE'}, {'3 MM': 'SODIUM DITHIONITE'}]  
+
+In order to use these values they needed to be unpacked. This was done by stacking the dictionaries into multiple rows, then splitting the concentration and chemical into different columns.  
+
+```python
+# stack the Organic_Precipitates column into organic_df_stacked and Salt_Precipitates column into salt_df_stacked
+organic_df_stacked = chemicals_df.set_index('Protein_ID')['Organic_Precipitates'].str.split(', ', expand=True).stack()
+salt_df_stacked = chemicals_df.set_index('Protein_ID')['Salt_Precipitates'].str.split(', ', expand=True).stack()
+
+# reset the index and rename the columns
+organic_df_stacked = organic_df_stacked.reset_index(level=1, drop=True).rename('Organic_Precipitates')
+salt_df_stacked = salt_df_stacked.reset_index(level=1, drop=True).rename('Salt_Precipitates')
+```
+
+[![Stacking and Splitting](/assets/img/stacking_and_splitting.png "Stacking and Splitting")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/stacking_and_splitting.png)
+
 
 
 [comment]: # (HTML for Organic Precipitate TOP10 Pie Chart)
