@@ -35,7 +35,11 @@ msno.bar(conditions_df)
 
 [![PDB Missing Data](/assets/img/PDB_missing_data.png "PDB Missing Data")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/PDB_missing_data.png)  
 
-A new dataframe was then created that contained only the rows rows that had precipitate data. This excludes any row that contains Null values in both the Organic_Precipitates and Salt_Precipitates columns.  
+---  
+
+> A new dataframe was then created that contained only the rows rows that had precipitate data. This excludes any row that contains Null values in both the Organic_Precipitates and Salt_Precipitates columns.  
+
+---  
 
 ```python
 conditions_exist = conditions_df.loc[((conditions_df['Organic_Precipitates'].notnull()) & (conditions_df['Salt_Precipitates'].notnull()))
@@ -44,16 +48,20 @@ conditions_exist = conditions_df.loc[((conditions_df['Organic_Precipitates'].not
 
 [![PDB Missing Data Excluding](/assets/img/PDB_missing_data_excluding.png "PDB Missing Data Excluding")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/PDB_missing_data_excluding.png)
 
-A heatmap was then created that shows nullity correlation between the columns in the original conditions_df. This represents how strongly each variable affects the presence of each other variable.  
+---  
 
-- (-1): if 1 variable appears the other does not
-- (0): the variables have no effect on each others appearance
-- (1): if 1 variable appears, so does the other
+> A heatmap was then created that shows nullity correlation between the columns in the original conditions_df. This represents how strongly each variable affects the presence of each other variable.   
+>
+> - (-1): if 1 variable appears the other does not
+> - (0): the variables have no effect on each others appearance
+> - (1): if 1 variable appears, so does the other
+>
+> From this the following can be inferred:  
+>
+> 1. If non Null data appears in the Crystallography_Type column, then data most likely also appears in the Vapor_Diffusion column, and vice versa.
+> 2. If non Null data appears in the Organic_Precipitates column, then data most likely also appears in the Salt_Precipitates column, and vice versa.
 
-From this the following can be inferred:  
-
-1. If non Null data appears in the Crystallography_Type column, then data most likely also appears in the Vapor_Diffusion column, and vice versa.
-2. If non Null data appears in the Organic_Precipitates column, then data most likely also appears in the Salt_Precipitates column, and vice versa.
+---  
 
 ```python
 msno.heatmap(conditions_df, cmap='YlGnBu')
