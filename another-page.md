@@ -63,9 +63,67 @@ salt_df_stacked = chemicals_df.set_index('Protein_ID')['Salt_Precipitates'].str.
 # reset the index and rename the columns
 organic_df_stacked = organic_df_stacked.reset_index(level=1, drop=True).rename('Organic_Precipitates')
 salt_df_stacked = salt_df_stacked.reset_index(level=1, drop=True).rename('Salt_Precipitates')
+
+# Creating the concentration and chemical columns where the unpacked dictionary keys and values will be stored
+organic_df_stacked = organic_df_stacked.reset_index()
+salt_df_stacked = salt_df_stacked.reset_index()
+
+organic_df_stacked = organic_df_stacked.reindex(columns = organic_df_stacked.columns.tolist() + ["Organic_Prec_Conc", "Organic_Precipitate"])
+salt_df_stacked = salt_df_stacked.reindex(columns = salt_df_stacked.columns.tolist() + ["Salt_Prec_Conc", "Salt_Precipitate"])
 ```
 
-[![Stacking and Splitting](/assets/img/stacking_and_splitting.png "Stacking and Splitting")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/stacking_and_splitting.png)
+[![Stacking and Splitting](/assets/img/stacking_and_splitting.png "Stacking and Splitting")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/stacking_and_splitting.png)  
+
+The stacked dictionaries in the precipitates columns then needed to be unpacked and the concentrations and chemicals then needed to be stored in the appropriate columns. This required more work since the dictionaries are stored in the Pandas dataframe as a Python object, which is a string and not an actualy dictionary. A function was created that moved the keys and values into the corresponding columns.  
+
+```python
+# For converting strings to dictionaries
+import ast
+
+def unpack_dictionary_from_dataframe_organic():
+    for index, row in organic_df_stacked.iterrows():
+        # Get the dictionary in the Organic_Precipitates column and store into the organic_prec variable
+        organic_prec = row[1]
+
+        # Need to get rid of the list characters so the string can be stored as a dictionary
+        organic_prec = organic_prec.replace('[', '')
+        organic_prec = organic_prec.replace(']', '')
+
+        # The organic_prec variable is a string, need to convert this to a dictionary using ast.literal.eval(), required import
+        organic_prec_dict = ast.literal_eval(organic_prec)
+
+        # This should be a 1 item dictionary, but in order to get the key, which is the concentation value, will use keys() method.
+        # This returns as a dict_key object type, which does not support indecies. This can be converted into a list though.
+        # Since the key variable is now a list, can call key[0] to access the concentration value and store that into the key
+        #   variable. There may be times when the list is empty so will handle that below, if so None will be stored.
+        key = list(organic_prec_dict.keys())
+        if key:
+            key = key[0]
+        else:
+            key = None
+
+        # This is where the concentration and chemical values will be updated in the dataframe
+        # Since Null values for the key have been dealt with above, only need to handle here for the dictionary values(Organic Precipitate Column)
+        # Key contains the concentration value
+        # organic_prec_dict[key] will produce the chemical name
+        organic_df_stacked.loc[index, 'Organic_Prec_Conc'] = key
+
+        if key:
+            organic_df_stacked.loc[index, 'Organic_Precipitate'] = organic_prec_dict[key]
+        else:
+            organic_df_stacked.loc[index, 'Organic_Precipitate'] = None
+
+        # Creating new dataframe without the Organic_Precipitates column
+        organic_precipitates_df = organic_df_stacked[['Protein_ID', 'Organic_Prec_Conc', 'Organic_Precipitate']].copy()
+        
+    return organic_precipitates_df
+
+organic_precipitates_df = unpack_dictionary_from_dataframe_organic()
+```
+
+
+
+
 
 
 
