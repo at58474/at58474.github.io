@@ -6,7 +6,7 @@ layout: single_column
 
 ---  
 
-> <img src="[https://mma.prnewswire.com/media/1513369/Educative_Logo.jpg](https://github.com/at58474/at58474.github.io/blob/master/assets/img/notebook.jpg)"  width="50" height="50"> The following data was extracted from the Protein Data Bank:
+> <img src="https://github.com/at58474/at58474.github.io/blob/master/assets/img/notebook.jpg"  width="50" height="50"> The following data was extracted from the Protein Data Bank:
 
 ---  
 
