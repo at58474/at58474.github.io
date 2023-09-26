@@ -7,8 +7,8 @@ layout: default
 
 
 
-**The dataframe that was created from the ccmodule.py module contains the following data**:
-![Missing Data Table](/assets/img/PDB_missing_data_table "Missing Data Table")
+The dataframe that was created from the ccmodule.py module contains the following data:
+![Missing Data Table](/assets/img/PDB_missing_data_table.png "Missing Data Table")
 
 
 
