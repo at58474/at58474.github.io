@@ -4,11 +4,24 @@ layout: default
 
 ## PDB Data Analysis
 
+Table and bar graphs sumarizing missing data
+Heatmap showing nullity correlation between extracted conditions, which shows if the presence of one condiditon affects the presence of another
+Table that contains all unique chemicals found in the PDB along with number of occurences
+Table and pie chart showing top 10 chemicals found in the PDB
+Scatter plots that show the top 10 chemicals by number of occurences with concentration of each occurance plotted (shows concentration grouping)
+Bar chart that displays pH of every crystalliation cocktail found in the PDB, which gives insight to the most used pH values for crystallizing proteins
+Table and pie chart that groups pH values into whole number groups to better summarize most frequently used pH values
 
 
+The following data was extracted from the Protein Data Bank:  
 
-The dataframe that was created from the ccmodule.py module contains the following data:
-![Missing Data Table](/assets/img/PDB_missing_data_table.png "Missing Data Table")
+![Missing Data Table](/assets/img/PDB_missing_data_table.png "Missing Data Table")  
+
+The first five rows of the dataframe created by the ccmodule.py module and which contains all of the extracted data is displayed below:  
+
+![Extracted Conditions Dataframe](/assets/img/conditions_df_first5.png "Extracted Conditions Dataframe")  
+
+
 
 
 
