@@ -19,6 +19,8 @@ The following data was extracted from the Protein Data Bank:
 
 The first five rows of the dataframe created by the ccmodule.py module and which contains all of the extracted data is displayed below:  
 
+[![Extracted Conditions Dataframe](/assets/img/conditions_df_first5.png "Extracted Conditions Dataframe")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/conditions_df_first5.png)  
+
 ![Extracted Conditions Dataframe](/assets/img/conditions_df_first5.png "Extracted Conditions Dataframe")  
 
 
