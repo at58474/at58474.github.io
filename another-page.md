@@ -31,8 +31,14 @@ msno.bar(conditions_df)
 
 [![PDB Missing Data](/assets/img/PDB_missing_data.png "PDB Missing Data")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/PDB_missing_data.png)  
 
+A new dataframe was then created that contained only the rows rows that had precipitate data. This excludes any row that contains Null values in both the Organic_Precipitates and Salt_Precipitates columns.  
 
+```python
+conditions_exist = conditions_df.loc[((conditions_df['Organic_Precipitates'].notnull()) & (conditions_df['Salt_Precipitates'].notnull()))
+                                | ((conditions_df['Organic_Precipitates'].notnull()) | (conditions_df['Salt_Precipitates'].notnull()))]
+```
 
+[![PDB Missing Data Excluding](/assets/img/PDB_missing_data_excluding.png "PDB Missing Data Excluding")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/PDB_missing_data_excluding.png)
 
 
 
