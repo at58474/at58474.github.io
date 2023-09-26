@@ -69,12 +69,20 @@ msno.heatmap(conditions_df, cmap='YlGnBu')
 
 [![PDB Heatmap](/assets/img/nullity_correlation_heatmap.png "PDB Heatmap")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/nullity_correlation_heatmap.png)  
 
-Since the crystalliation cocktails consisted of a varying number of chemicals, they were stored as a list of dictionaries. This allows for multiple chemicals along with their concentrations to be stored in a single dataframe column.  
-The following is an example of the list of dictionaries for the salt precipitates contained in the crystallization cocktail for the protein with an ID of 1A00:  
+---  
 
-[{'10 MM': 'POTASSIUM PHOSPHATE'}, {'100 MM': 'POTASSIUM CHLORIDE'}, {'3 MM': 'SODIUM DITHIONITE'}]  
+> Since the crystalliation cocktails consisted of a varying number of chemicals, they were stored as a list of dictionaries. This allows for multiple chemicals along with their concentrations to be stored in a single
+> dataframe column.  
 
-In order to use these values they needed to be unpacked. This was done by stacking the dictionaries into multiple rows, then splitting the concentration and chemical into different columns.  
+---  
+
+> The following is an example of the list of dictionaries for the salt precipitates contained in the crystallization cocktail for the protein with an ID of 1A00:  
+> 
+> [{'10 MM': 'POTASSIUM PHOSPHATE'}, {'100 MM': 'POTASSIUM CHLORIDE'}, {'3 MM': 'SODIUM DITHIONITE'}]  
+> 
+> In order to use these values they needed to be unpacked. This was done by stacking the dictionaries into multiple rows, then splitting the concentration and chemical into different columns.  
+
+---  
 
 ```python
 # stack the Organic_Precipitates column into organic_df_stacked and Salt_Precipitates column into salt_df_stacked
@@ -95,7 +103,11 @@ salt_df_stacked = salt_df_stacked.reindex(columns = salt_df_stacked.columns.toli
 
 [![Stacking and Splitting](/assets/img/stacking_and_splitting.png "Stacking and Splitting")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/stacking_and_splitting.png)  
 
-The stacked dictionaries in the precipitates columns then needed to be unpacked and the concentrations and chemicals then needed to be stored in the appropriate columns. This required more work since the dictionaries are stored in the Pandas dataframe as a Python object, which is a string and not an actualy dictionary. A function was created that moved the keys and values into the corresponding columns.  
+---  
+
+> The stacked dictionaries in the precipitates columns then needed to be unpacked and the concentrations and chemicals then needed to be stored in the appropriate columns. This required more work since the dictionaries > are stored in the Pandas dataframe as a Python object, which is a string and not an actualy dictionary. A function was created that moved the keys and values into the corresponding columns.  
+
+---  
 
 ```python
 # For converting strings to dictionaries
