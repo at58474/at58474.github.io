@@ -6,7 +6,7 @@ layout: single_column
 
 ---  
 
-> <img src="assets/img/notebook.jpg"  width="50" height="50"> The following data was extracted from the Protein Data Bank:
+> The following data was extracted from the Protein Data Bank:
 
 ---  
 
