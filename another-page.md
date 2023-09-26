@@ -4,7 +4,11 @@ layout: single_column
 
 ## PDB Data Analysis
 
-The following data was extracted from the Protein Data Bank:  
+It works with almost all markdown flavours (the below blank line matters).
+
+---
+> The following data was extracted from the Protein Data Bank:  
+---  
 
 ![Missing Data Table](/assets/img/PDB_missing_data_table.png "Missing Data Table")  
 
