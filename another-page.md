@@ -198,11 +198,13 @@ print(f'{len(unique_chemicals)} \n')
 print(unique_chemicals)
 ```
 
-Precipitates found in both lists:
+Precipitates found in both lists:  
+
 {'PEG', 'SUCROSE', None, 'AMMONIUM SULFATE', 'ACETIC ACID'}  
 
-Combined Precipitates
-99 
+Combined Precipitates  
+
+99  
 
 ['PEG 4000' 'PEG 6000' 'PEG 6K' 'PEG MME 550' 'JEFFAMINE ED-4000' 'PEG'
  'PEG 3350' 'AMMONIUM SULFATE' 'PEG MME 5K' 'ETHYLENE GLYCOL' 'PEG 8000'
@@ -224,7 +226,9 @@ Combined Precipitates
  'D-SORBITOL' 'NAD' 'ORNITHINE' 'BICINE' 'SPERMINE' 'NADP'
  'AMMONIUM HYDROGEN PHOSPHATE' 'INOSITOL' 'SODIUM FORMATE' 'TRIS-HCL'
  'AMMONIUM SO4' 'MAGNESIUM ACETATE' 'AMMONIUM SULFITE' 'BES' 'PVP K-15'
- 'PHOSPHATE-CITRATE' 'CITRIC ACID' 'MALTOSE']
+ 'PHOSPHATE-CITRATE' 'CITRIC ACID' 'MALTOSE']  
+
+ 
 
 
 
