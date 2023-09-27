@@ -228,13 +228,40 @@ Combined Precipitates
  'AMMONIUM SO4' 'MAGNESIUM ACETATE' 'AMMONIUM SULFITE' 'BES' 'PVP K-15'
  'PHOSPHATE-CITRATE' 'CITRIC ACID' 'MALTOSE']  
 
- 
+ ---  
 
+ > To track the number of times each chemical occured, two Pandas series were created using the value_counts() method. The top 10 chemicals were then converted into a dataframe where a table and pie chart were used to visualize the most used chemicals found in the PDB.
 
+---  
 
+```python
+# This creates 2 series that contain all unique chemicals and the number of times they occur
+organic_precipitates_value_counts = organic_precipitates_df['Organic_Precipitate'].value_counts(dropna=False)
+salt_precipitates_value_counts = salt_precipitates_df['Salt_Precipitate'].value_counts(dropna=False)
 
+# Saving the top 10 records 
+organic_prec_series = organic_precipitates_value_counts.iloc[:10]
 
+# Converting the series into a dataframe
+organic_prec_df = pd.DataFrame({'Organic_Precipitate':organic_prec_series.index, 'Occurances':organic_prec_series.values})
+```
 
+```python
+import plotly.express as px
+import plotly.graph_objs as go
+
+fig = px.pie(organic_prec_df, values='Occurances', 
+             names='Organic_Precipitate', 
+             title='Most Occuring Chemicals Found in the PDB',
+             hole=.3)
+fig.update_traces(textposition='inside', textinfo='percent+label')
+fig.show()
+
+# This creates an html file, copy the html and paste it directly into markdown file
+fig.write_html(r"C:\Users\adamo\OneDrive\Desktop\Chart_Images\OP_top10_piechart.html", full_html=False, include_plotlyjs='cdn')
+```
+
+[![Organic Top 10 Table](/assets/img/top10_organic_table.png "Organic Top 10 Table")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/top10_organic_table.png)  
 
 
 [comment]: # (HTML for Organic Precipitate TOP10 Pie Chart)
