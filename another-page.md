@@ -176,7 +176,57 @@ unique_chemicals_salt = pd.unique(salt_precipitates_df['Salt_Precipitate'])
 print(f'A list of those unique chemicals: \n\n {unique_chemicals_salt}')
 ```
 
-[![Unique Salt Precipitates](/assets/img/unique_chem_list.png "Unique Salt Precipitates")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/unique_chem_list.png)
+[![Unique Salt Precipitates](/assets/img/unique_chem_list.png "Unique Salt Precipitates")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/unique_chem_list.png)  
+
+---  
+
+> A single list was then created that combined the chemicals found in both the organic and salt precipitates lists
+
+---  
+
+```python
+# Seeing if there are any chemicals that are present in both lists
+matches = set(unique_chemicals_organic).intersection(unique_chemicals_salt)
+print(matches)
+
+# Create a single list containing all unique chemicals
+unique_chemicals_organic = list(unique_chemicals_organic)
+unique_chemicals_salt = list(unique_chemicals_salt)
+
+unique_chemicals = pd.unique(unique_chemicals_organic + unique_chemicals_salt)
+print(f'{len(unique_chemicals)} \n')
+print(unique_chemicals)
+```
+
+Precipitates found in both lists:
+{'PEG', 'SUCROSE', None, 'AMMONIUM SULFATE', 'ACETIC ACID'}  
+
+Combined Precipitates
+99 
+
+['PEG 4000' 'PEG 6000' 'PEG 6K' 'PEG MME 550' 'JEFFAMINE ED-4000' 'PEG'
+ 'PEG 3350' 'AMMONIUM SULFATE' 'PEG MME 5K' 'ETHYLENE GLYCOL' 'PEG 8000'
+ 'OCTYL GLUCOSIDE' 'PEG 2000' None 'SUCROSE' 'GLYCEROL ETHOXYLATE'
+ 'PEG 400' 'PEG 1450' '1,4-DIOXANE' 'PEG 4K' 'TERT-BUTANOL' 'ACETONE'
+ 'TETRAETHYLENE GLYCOL' 'TREHALOSE' 'MONOMETHYL PEG 5K' 'ACETIC ACID'
+ 'SODIUM AZIDE' 'GLYCEROL' 'POLYETHYLENE GLYCOL' 'PEG 8K' '2-PROPANOL'
+ 'ISOPROPANOL' 'AMMONIUM FORMATE' '2-METHYL-2-BUTANOL' 'JEFFAMINE M-600'
+ 'PEG 10000' 'POTASSIUM ACETATE' 'MES' 'POTASSIUM PHOSPHATE'
+ 'POTASSIUM CHLORIDE' 'SODIUM DITHIONITE' 'SODIUM NITRATE' 'LI2SO4' 'MOPS'
+ 'DMSO' 'NICL2' 'TRIS' 'MNCL2' 'LICL' 'ALANINE' 'ALPHA-KETOGLUTARATE'
+ 'SODIUM ACETATE' 'AZIDE' 'AMMONIUM PHOSPHATE' 'SODIUM CITRATE' 'DTT'
+ 'EDTA' 'MALONIC ACID' 'MANGANESE(II) CHLORIDE' 'SODIUM CACODYLATE'
+ 'ZINC(II) CHLORIDE' 'AMMONIUM CITRATE' 'TRIS-ACETATE' 'HEPES' 'BIS-TRIS'
+ 'CALCIUM ACETATE' '2-MERCAPTOETHANOL' 'ETHYL ACETATE' 'LITHIUM NITRATE'
+ 'AMMONIUM ACETATE' 'CACODYLIC ACID' 'MPD' 'SODIUM PHOSPHATE'
+ 'SODIUM SUCCINATE' 'AMMONIUM NITRATE' 'LACTOSE' 'N-ACETLYGLUCOSAMINE'
+ 'DIETHYLENE GLYCOL' 'SODIUM CHLORIDE' 'LITHIUM CHLORIDE' 'MOPSO'
+ 'D-SORBITOL' 'NAD' 'ORNITHINE' 'BICINE' 'SPERMINE' 'NADP'
+ 'AMMONIUM HYDROGEN PHOSPHATE' 'INOSITOL' 'SODIUM FORMATE' 'TRIS-HCL'
+ 'AMMONIUM SO4' 'MAGNESIUM ACETATE' 'AMMONIUM SULFITE' 'BES' 'PVP K-15'
+ 'PHOSPHATE-CITRATE' 'CITRIC ACID' 'MALTOSE']
+
+
 
 
 
