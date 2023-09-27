@@ -105,7 +105,7 @@ salt_df_stacked = salt_df_stacked.reindex(columns = salt_df_stacked.columns.toli
 
 ---  
 
-> The stacked dictionaries in the precipitates columns then needed to be unpacked and the concentrations and chemicals then needed to be stored in the appropriate columns. This required more work since the dictionaries are stored in the Pandas dataframe as a Python object, which is a string and not an actualy dictionary. A function was created that moved the keys and values into the corresponding columns.  
+> The stacked dictionaries in the precipitates columns then needed to be unpacked and the concentrations and chemicals stored in the appropriate columns. This required more work since the dictionaries are stored in the Pandas dataframe as a Python object, which is a string and not an actual dictionary. A function was created that moved the keys and values into the corresponding columns.  
 
 ---  
 
@@ -154,6 +154,29 @@ def unpack_dictionary_from_dataframe_organic():
 organic_precipitates_df = unpack_dictionary_from_dataframe_organic()
 ```
 
+---  
+
+> The organic precipitates dataframe after unpacking the keys into the concentration column and values into the precipitates column.
+
+---  
+
+[![Stacking and Splitting Full](/assets/img/stacking_and_splitting_full.png "Stacking and Splitting Full")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/stacking_and_splitting_full.png)  
+
+---  
+
+> In order to get a better idea of how many chemicals were found in the PDB cocktails, lists were created for both the organic precipitate and salt precipitate dataframes that contained all unique precipitates found.
+
+---  
+
+```python
+number_unique_chemicals_salt = len(pd.unique(salt_precipitates_df['Salt_Precipitate']))
+print(f'The number of unique chemicals found in the salt precipitates dataframe: \n\n {number_unique_chemicals_salt} \n')
+
+unique_chemicals_salt = pd.unique(salt_precipitates_df['Salt_Precipitate'])
+print(f'A list of those unique chemicals: \n\n {unique_chemicals_salt}')
+```
+
+[![Unique Salt Precipitates](/assets/img/unique_chem_list.png "Unique Salt Precipitates")](https://github.com/at58474/at58474.github.io/blob/master/assets/img/unique_chem_list.png)
 
 
 
