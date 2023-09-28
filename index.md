@@ -111,5 +111,7 @@ This file imports the validated program settings and controls which classes from
     * Bar chart that displays pH of every crystalliation cocktail found in the PDB, which gives insight to the most used pH values for crystallizing proteins
     * Table and pie chart that groups pH values into whole number groups to better summarize most frequently used pH values
 
-[Data Analysis of the PDB](https://at58474.github.io/another-page)
+[Data Analysis of the PDB](https://at58474.github.io/another-page)  
+
+* To use various supervised deep learning models such as a convolutional neural network (CNN) to determine the crystallography conditions needed to obtain diffractable protein crystals by learning and mapping those conditions from the FASTA protein sequence. The target crystallography parameters are pH, temperature, and chemical composition of the mother liquor.
 
