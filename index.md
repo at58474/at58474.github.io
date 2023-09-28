@@ -159,6 +159,16 @@ class ConvertToPDB:
 
 
 * PDBCrystallizationConditions:
+  * This is the main class where all of the conditions are extracted from the PDB files. The following methods are called for every .pdb files and then each condition is stored in the conditions dataframe.
+  * **extract_remark_280()**: This method opens the PDB file and extracts every line in the REMARK 280 section into a list where every item is a string.
+  * **extract_solvent_content()**: Extracts the solvent content from the REMARK 280 section, if it exists, and stores the value into the Solvent_Concentration column in the dataframe.
+  * **extract_matthews_coefficient()**: If included in the file, this method finds and stores the Matthew's Coefficient into the dataframe.
+  * **extract_crystallization_conditions()**: Determines if the data is part of the crystallization conditions section and stores that information into a new list variable which contains chemical composition, pH, temperature, and crystallization method. This is mostly used to reduce the complexity of the original list in order to more easily extract the relevant data.
+  * **extract_crystallography_type()**:
+  * **extract_vapor_diffusion_type()**:
+  * **extract_ph()**:
+  * **extract_organic_precipitates()**:
+  * **extract_salt_precipitates()**:
 
 * ConvertToPDB:
 
