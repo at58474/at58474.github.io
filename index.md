@@ -117,7 +117,7 @@ This file imports the validated program settings and controls which classes from
 
 ### Crystallography Conditions Extraction Module Overview  
 
-[ccmodule.py](https://github.com/at58474/Crystallization-Conditions/blob/27267c8d78e8d43083900a3c788bc7bc1ba6b38a/ccmodule.py)  
+[ccmodule.py](https://github.com/at58474/Crystallization-Conditions/blob/27267c8d78e8d43083900a3c788bc7bc1ba6b38a/ccmodule.py)  (892 lines)
 
 **Data Collection and Preprocessing**: The following describes the process taken to collect the 204,170 *.pdb files.  
 
@@ -164,11 +164,12 @@ class ConvertToPDB:
   * **extract_solvent_content()**: Extracts the solvent content from the REMARK 280 section, if it exists, and stores the value into the Solvent_Concentration column in the dataframe.
   * **extract_matthews_coefficient()**: If included in the file, this method finds and stores the Matthew's Coefficient into the dataframe.
   * **extract_crystallization_conditions()**: Determines if the data is part of the crystallization conditions section and stores that information into a new list variable which contains chemical composition, pH, temperature, and crystallization method. This is mostly used to reduce the complexity of the original list in order to more easily extract the relevant data.
-  * **extract_crystallography_type()**:
-  * **extract_vapor_diffusion_type()**:
-  * **extract_ph()**:
-  * **extract_organic_precipitates()**:
-  * **extract_salt_precipitates()**:
+  * **extract_crystallography_type()**: The crystallography types found in the PDB are VAPOR DIFFUSION, MOLECULAR REPLACEMENT, FIBER SEEDING, DIALYSIS, BATCH, and MICRODIALYSIS. Vapor diffusion is the most widely used method and is further categorized into hanging drop or sitting drop. If one of these types is found then it is stored into the dataframe.
+  * **extract_vapor_diffusion_type()**: If the experimental method used was vapor diffusion, then this method determines if the hanging drop or sitting drop method was used and records the finding into the dataframe.
+  * **extract_ph()**: Extracts the pH of the mother liquor and stores the value into the dataframe.
+  * **extract_organic_precipitates()**: Since hundreds of chemicals can be found within the .pdb files downloaded from the Protein Data Bank, and typos and missing information is prevelant, this method required the most effort to successfully extract the chemicals and their cooresponding concentrations. Reference the docstring in the ccmodule.py file above for more detail into how this was performed. In summary, the organic precipiates were assumed to have concentration measured by percentage, either w/v or v/v, so a REGEX was used to extract this data. If the extracted data contained certain words then the data was erraneous and was removed. If an exact match was not found from comparing the word to a list of all chemicals found in the PDB, then it was replaced with the most similar match. The concentration and chemical were stored into the dataframe as a list wrapped dictionary.
+  * **extract_salt_precipitates()**: This method extracts the salt precipitates from the crystallization conditions list. It uses a similar approach as the organic precipitates method, exept the concentration of the salt precipitates were assumed to be measured in molarity. A list of dictionaries were also utilized to store the data into a single location in the dataframe.
 
 * ConvertToPDB:
+  * This class converts the .ent files into .pdb files and was summarized in the Data Collection and Preprocessing section above.
 
