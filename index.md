@@ -152,6 +152,8 @@ class ConvertToPDB:
         print('Done in {:.4f} seconds'.format(toc - tic))
 ```
 
+**ccmodule.py Summary**:
+
 * PDBPreprocessingSequences:
   * This class extracts the primary protein sequence from the SEQRES section of each PDB file. The extracted sequences are then converted into FASTA format using the BioPython library. The primary sequences exclude modifications such as cleaved his-tags, chain ends, and mobile loops, so often times the SEQRES sequence will differ from the sequence generated from the ATOM coordinates. This may pose a problem when predicting crystallization conditions since these modifications will not be used during modeling. Cleaving a his-tag, for example, can improve macromolecule packing during crystal growth, so this may couse erraneous predictions. A future module may also exract the ATOM sequence and determine which modifications were performed, but the BioPython library used did this with a high rate of failure.
   * Creates .fasta file for each unique protein, which is then used in the class below to append the fasta sequence to the main dataframe where a protein ID match is found.
@@ -172,4 +174,19 @@ class ConvertToPDB:
 
 * ConvertToPDB:
   * This class converts the .ent files into .pdb files and was summarized in the Data Collection and Preprocessing section above.
+
+
+**controller.py Summary**:  
+
+* This simple controls which classes will be run and where the data is stored that is required by the module to execute properly.
+
+* This is where the following file paths need to be set:
+  * ent_file_folder
+  * pdb_file_folder
+  * fasta_file_folder
+
+* The following three parameters must also be set to True or False:
+  * convert_ent_pdb
+  * run_extract_sequence
+  * run_extract_conditions
 
