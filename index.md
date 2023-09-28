@@ -113,5 +113,53 @@ This file imports the validated program settings and controls which classes from
 
 [Data Analysis of the PDB](https://at58474.github.io/another-page)  
 
-* To use various supervised deep learning models such as a convolutional neural network (CNN) to determine the crystallography conditions needed to obtain diffractable protein crystals by learning and mapping those conditions from the FASTA protein sequence. The target crystallography parameters are pH, temperature, and chemical composition of the mother liquor.
+* To use various supervised deep learning models such as a convolutional neural network (CNN) to determine the crystallography conditions needed to obtain diffractable protein crystals by learning and mapping those conditions from the FASTA protein sequence. The goal is to then apply this to proteins whose structure has yet to be determined to give insight into what crystallizaiton conditions may be optimal for producing shootable crystals. The target crystallography parameters are pH, temperature, and chemical composition of the mother liquor.
+
+### Crystallography Conditions Extraction Module Overview  
+
+[ccmodule.py](https://github.com/at58474/Crystallization-Conditions/blob/27267c8d78e8d43083900a3c788bc7bc1ba6b38a/ccmodule.py)  
+
+**Data Collection and Preprocessing**: The following describes the process taken to collect the 204,170 *.pdb files.  
+
+* The files were downloaded from the Protein Data Bank's FTP servers at 'ftp.wwpdb.org/pub/pdb/data/structures/all'. This process took roughly 24 hours to complete.
+
+* The files were indivudually compressed as *.enz.gz (gzip) files, and thus needed to be extracted (*.ent.gz -> *.ent). The 7zip command line program was used to extract by using the following command, and took around 8 hours to complete.
+
+```console
+(7zip cmd): "C:\Program Files\7-zip\7z.exe" e"*.gz" -o..\Extracted\
+```
+
+* The final step was to convert the file extension from *.ent to *.pdb. This was done by simply renaming the files using a Python script. Multiprocessing was utilized and this completed in roughly four hours.
+
+```python
+class ConvertToPDB:
+
+    def __init__(self, ent_file_folder):
+        self.ent_file_folder = ent_file_folder
+
+    @staticmethod
+    def change_file_extension(file):
+        base = os.path.splitext(file)[0]
+        os.rename(file, base + '.pdb')
+
+    def handle_multiprocessing(self):
+        tic = time.time()
+        ent_files = Path(self.ent_file_folder).glob('*.ent')
+        pool = multiprocessing.Pool()
+        pool.map(self.change_file_extension, ent_files)
+        pool.close()
+        toc = time.time()
+        print('Done in {:.4f} seconds'.format(toc - tic))
+```
+
+
+
+
+* PDBPreprocessingSequences:
+  * 
+
+
+* PDBCrystallizationConditions:
+
+* ConvertToPDB:
 
