@@ -178,7 +178,7 @@ class ConvertToPDB:
 
 **controller.py Summary**:  
 
-* This simple controls which classes will be run and where the data is stored that is required by the module to execute properly.
+* This simply controls which classes will be run and where the data is stored that is required by the module to execute properly.
 
 * This is where the following file paths need to be set:
   * ent_file_folder
