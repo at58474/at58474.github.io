@@ -1,6 +1,8 @@
 title: Adam Taylor
-logo: /assets/img/photo.png
+logo: 
 description: Aspiring Data Analyst
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
+
+# /assets/img/photo.png
