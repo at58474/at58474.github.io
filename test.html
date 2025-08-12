@@ -31,7 +31,7 @@
 </head>
 <body>
   <div class="container py-4">
-    
+    <!-- <button class="btn btn-secondary theme-toggle" onclick="document.body.classList.toggle('dark-mode')">Toggle Theme</button>-->
     <h1 class="mb-4">Projects Portfolio</h1>
 
     <!-- 1. Time Series Analysis with ARIMA/SARIMA -->
@@ -39,7 +39,7 @@
       <div class="card-body">
         <h3 class="card-title">Time Series Analysis with ARIMA and SARIMA<br><br></h3>
         <div class="detail-section">
-              <p>This project forecasts river flow using historical USGS data for recreational insights, focusing on timing and aggregation impacts on model performance. A modular Python package automates preprocessing, modeling, diagnostics, and evaluation of ARIMA/SARIMA time series methods.</p>
+              <p>In this study I explored and discovered models that can accurately forecast river flow using historical streamflow data obtained from USGS web interface and NOAA API requests. The forecast data obtained is strictly meant for recreational purposes but could be used for other purposes. A modular Python package automates the process of preprocessing, modeling, diagnosing, and evaluating ARIMA/SARIMA time series methodologies, and can be used for time series analysis on any fitting dataset, not just streamflow.</p>
               <p>Read the full report here: <a href="https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/TS_Analysis_RFG.pdf" target="_blank">Time Series Model Performance Analysis (PDF)</a></p>
             </div>
         <div>
@@ -100,7 +100,8 @@
               <div class="accordion-body">
                 <div class="detail-section">
                   <h5>Project Overview</h5>
-                  <p>For this project I developed an automated Python package for time series analysis and forecasting, designed to accurately predict river streamflow for recreational and resource management purposes. Using historical 15-minute interval data from the USGS and precipitation data from the NOAA API, the system generated 25 unique datasets through multiple aggregation methods and time intervals, then applied ARIMA, SARIMA, and VAR models. Model parameters were optimized using ADF, ACF, PACF, AIC, RMSE, and MAPE, with performance validated via rolling and cross-validation techniques. Analysis revealed that time interval and aggregation method significantly influenced forecast accuracy, with ARIMA excelling at shorter intervals and SARIMA performing better for longer seasonal patterns. The package also automated data cleaning, anomaly detection, parameter tuning, and results reporting, enabling efficient, reproducible, and scalable forecasting workflows.</p>
+                  <p>For this project I developed a forecasting application for predicting river flow at the Russell Fork Gorge using historical 15-minute USGS streamflow data and NOAA precipitation records. Twenty-five datasets were generated through varying aggregation methods and time intervals. These datasets were modeled using ARIMA, SARIMA, and VAR, with parameters optimized via ADF, ACF, PACF, AIC, RMSE, and MAPE and performance validated via rolling and cross-validation techniques. Results showed that ARIMA excelled at short-term forecasts (1–7 days), while SARIMA performed better for longer seasonal patterns, with mean aggregation producing the most accurate results.</p>
+                  <p>The study demonstrated that the ARIMA model, tuned through the Box–Jenkins methodology, could reliably predict streamflow hours to days in advance, supporting recreational planning and potentially informing flood control or emergency management with further refinement. Automated workflows were implemented for data cleaning, anomaly detection, parameter tuning, and results reporting, enabling efficient, reproducible, and scalable forecasting. Limitations included inconsistent precipitation data for VAR modeling, highlighting the need for improved rainfall measurements in remote areas.</p>
                 </div>
                 <div class="detail-section">
                   <h5>Key Features & Workflow</h5>
@@ -350,7 +351,7 @@
   <div class="card-body">
     <h3 class="card-title">Climbing Conditions Web App<br><br></h3>
     <div class="detail-section">
-      <p>This project is a full-stack Flask web app that fetches live and forecast weather data from OpenWeatherMap, uses a machine learning model (Random Forest or Decision Tree) to calculate a Climbing Conditions Score, and presents interactive visualizations with Plotly on the frontend. It helps climbers plan trips by providing real-time, location-specific weather insights and predictive scoring.</p>
+        <p><b>Machine Learning Powered Flask App for Predicting Climbing Conditions</b> — A full-stack application that integrates live, historical, and forecasted weather data from multiple APIs, processes it with machine learning models trained on optimal climbing conditions, and generates a Climbing Conditions Score (CCS) for each location. Interactive, mobile-friendly visualizations present real-time and forecasted scores alongside key weather metrics, enabling climbers to assess conditions and plan trips with confidence</p>
       <p><a href="https://www.climbingconditions.com/" target="_blank">Live Climbing Conditions Website</a></p>
     </div>
     <div class="detail-section">
@@ -431,8 +432,8 @@
           <div class="accordion-body">
             <div class="detail-section">
                 <h5>Project Summary</h5>
-                <p>This project is a full-stack Flask web application that retrieves live and forecasted weather data from the OpenWeatherMap API, processes it in Python, and uses a trained RandomForestRegressor machine learning model to calculate a Climbing Conditions Score (CCS). The system presents this information in an interactive, mobile-friendly frontend using JavaScript and Plotly, with visualizations and forecast cards that update in real time.</p>
-                <p>It integrates machine learning, API consumption, time zone handling, weather data aggregation, and data visualization into a seamless user experience for climbers looking to plan their trips based on local weather and predictive scoring.</p>
+                <p>This web application predicts location-specific climbing conditions by integrating historical, real-time, and forecasted weather data from the OpenWeatherMap and Open-Meteo APIs. The climbing conditions application uses Random Forest and Decision Tree regression models trained on datasets representing optimal climbing environments to produce a Climbing Conditions Score (CCS). The backend processes weather data in Python, performing time zone adjustments, rainfall aggregation, and predictive modeling before serving results to a responsive frontend.</p>
+                <p>The interface, built with JavaScript and Plotly, offers real-time updates, interactive charts, and detailed forecast cards that highlight both CCS values and key meteorological data such as temperature, humidity, rainfall totals, and wind speed. By combining machine learning, robust API processing, and dynamic visualization, the app provides climbers with data-driven insights for evaluating current and upcoming conditions at specific destinations around the United States.</p>
             </div>
             <div class="detail-section">
               <h5>Architecture</h5>
@@ -565,4 +566,3 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
