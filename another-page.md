@@ -2,7 +2,15 @@
 layout: single_column
 ---
 
-## PDB Data Analysis
+## Exploratory Data Analysis of Protein Crystallization Conditions
+
+The following analysis focuses on the following topics using the cleaned chemical composition data extracted from the PDB, with hopes of understanding how chemical composition, concentration, and pH are used in real-world protein crystallography experiments:
+- **Missing data patterns** – using tools like missingno to see which experimental parameters (columns) are often recorded together or missing together
+- **Chemical additives in crystallization cocktails** – unpacking and restructuring data about organic and salt precipitates, including their types and concentrations, to find the most common chemicals and how often they appear together
+- **Concentration trends** – scatter plots to see concentration ranges for the top chemicals and whether certain ranges are common in successful experiments
+- **pH trends** – determining which pH values (exact and grouped by whole numbers) are most commonly used in successful crystallizations
+- **Overlap analysis** – identifying chemicals that appear in both organic and salt precipitate categories
+
 
 ---  
 
