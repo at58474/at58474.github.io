@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Projects Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      padding: 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .tech-list { list-style-type: disc; margin-left: 20px; }
+    .sub-list { list-style-type: circle; margin-left: 40px; }
+    .detail-section { margin-bottom: 1em; }
+    body.dark-mode {
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+    }
+    body.dark-mode a {
+      color: #4aa3ff;
+    }
+    body.dark-mode .card {
+      background-color: #2c2c2c;
+      border-color: #444;
+    }
+    .theme-toggle {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <button class="btn btn-secondary theme-toggle" onclick="document.body.classList.toggle('dark-mode')">Toggle Theme</button>
+    <h1 class="mb-4">Projects Portfolio</h1>
+
+    <!-- 1. Time Series Analysis with ARIMA/SARIMA -->
+    <div class="card mb-4">
+      <div class="card-body">
+        <h3 class="card-title">Time Series Analysis with ARIMA and SARIMA<br><br></h3>
+        <div class="detail-section">
+              <p>This project forecasts river flow using historical USGS data for recreational insights, focusing on timing and aggregation impacts on model performance. A modular Python package automates preprocessing, modeling, diagnostics, and evaluation of ARIMA/SARIMA time series methods.</p>
+              <p>Read the full report here: <a href="https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/TS_Analysis_RFG.pdf" target="_blank">Time Series Model Performance Analysis (PDF)</a></p>
+            </div>
+        <div>
+          <p><strong>Technologies &amp; Tools</strong></p>
+          <ul class="tech-list">
+            <li>Python (Pandas, statsmodels, SciPy, Matplotlib, Seaborn)</li>
+            <li>Facebook Prophet</li>
+            <li>Auto-ARIMA &amp; Auto-SARIMA implementations</li>
+            <li>NOAA API &amp; USGS National Water Dashboard API</li>
+            <li>Multiprocessing</li>
+            <li>SARIMAX (predict &amp; forecast methods)</li>
+            <li>Custom Python modules for automated time series modeling</li>
+            <li>PDF report generation for model results</li>
+          </ul>
+
+  <p><strong>Statistical Methods</strong></p>
+  <ul class="tech-list">
+    <li>Augmented Dickey-Fuller (ADF) test for stationarity (with auto-differencing)</li>
+    <li>Autocorrelation (ACF) &amp; Partial Autocorrelation (PACF) analysis</li>
+    <li>Canova-Hansen (CH) test for seasonality</li>
+    <li>Ljung-Box test for residual correlation</li>
+    <li>Seasonal decomposition of time series</li>
+    <li>Box-Jenkins methodology for parameter estimation</li>
+    <li>Residual diagnostics: standardized residuals, histograms, Q-Q plots, ACF plots</li>
+  </ul>
+
+  <p><strong>Machine Learning / Time Series Forecasting Models</strong></p>
+  <ul class="tech-list">
+    <li>ARIMA (Autoregressive Integrated Moving Average)</li>
+    <li>SARIMA (Seasonal ARIMA)</li>
+    <li>VAR (Vector Autoregression)</li>
+    <li>Seasonal differencing parameter optimization</li>
+  </ul>
+
+  <p><strong>Data Processing &amp; Modeling Techniques</strong></p>
+  <ul class="tech-list">
+    <li>Merging multiple datasets from different sources</li>
+    <li>Data cleaning: duplicate removal, timestamp reindexing, missing data imputation (forward fill), column renaming/deletion</li>
+    <li>Flexible raw data ingestion with configurable delimiter</li>
+    <li>Downsampling &amp; aggregation (mean, first, max) across multiple time intervals</li>
+    <li>Anomaly detection &amp; handling (including extreme value retention for hydrological relevance)</li>
+    <li>Parameter tuning &amp; model evaluation using AIC, RMSE, and MAPE</li>
+    <li>Comparative analysis of forecasting methods and aggregation strategies</li>
+    <li>In-sample non-rolling, in-sample 1-step-ahead rolling, and out-of-sample rolling forecasts</li>
+    <li>Cross-validation (customizable number of groups &amp; test sizes) with visualized performance results</li>
+    <li>Auto-ARIMA iterative parameter search with top-N results ranked by AIC, MAPE, and RMSE</li>
+    <li>Automated plotting &amp; result storage with structured directory output</li>
+    <li>File handling automation with configurable cleanup and archiving structure</li>
+  </ul>
+</div>
+
+        <div class="accordion" id="accordionTS">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTS">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTS">Full Project Details</button>
+            </h2>
+            <div id="collapseTS" class="accordion-collapse collapse" aria-labelledby="headingTS" data-bs-parent="#accordionTS">
+              <div class="accordion-body">
+                <div class="detail-section">
+                  <h5>Project Overview</h5>
+                  <p>For this project I developed an automated Python package for time series analysis and forecasting, designed to accurately predict river streamflow for recreational and resource management purposes. Using historical 15-minute interval data from the USGS and precipitation data from the NOAA API, the system generated 25 unique datasets through multiple aggregation methods and time intervals, then applied ARIMA, SARIMA, and VAR models. Model parameters were optimized using ADF, ACF, PACF, AIC, RMSE, and MAPE, with performance validated via rolling and cross-validation techniques. Analysis revealed that time interval and aggregation method significantly influenced forecast accuracy, with ARIMA excelling at shorter intervals and SARIMA performing better for longer seasonal patterns. The package also automated data cleaning, anomaly detection, parameter tuning, and results reporting, enabling efficient, reproducible, and scalable forecasting workflows.</p>
+                </div>
+                <div class="detail-section">
+                  <h5>Key Features & Workflow</h5>
+                  <ul class="sub-list">
+                    <li><strong>Preprocessing:</strong> merging multiple datasets, imputing missing data, removing duplicates, renaming/deleting columns with configuration support.</li>
+                    <li><strong>Resampling:</strong> multi-frequency resampling (first, mean, max) with optional row cap to speed processing.</li>
+                    <li><strong>Stationarity & Decomposition:</strong> Automated ADF test with differencing, ACF and PACF plots, and seasonal-trend-residual decomposition visualizations.</li>
+                    <li><strong>Modeling:</strong>
+                      <ul class="sub-list">
+                        <li>In-sample, rolling 1-step ahead, and out-of-sample forecasting using ARIMA and SARIMA.</li>
+                        <li>Performance metrics generated for each model variant: AIC, RMSE, MAPE, comparing predict() vs forecast().</li>
+                      </ul>
+                    </li>
+                    <li><strong>Diagnostics:</strong> Residual analysis with Q-Q plots, histograms, and autocorrelation plots using both statsmodels built-in diagnostics and custom plotting methods.</li>
+                    <li><strong>Cross Validation:</strong> User-configurable cross-validation folds with visualizations of in-sample and out-of-sample forecast accuracy and error metrics across datasets.</li>
+                    <li><strong>Auto-ARIMA Grid Search:</strong> Exhaustive parameter search with PDF reports summarizing top models by AIC, MAPE, and RMSE.</li>
+                    <li><strong>File Management:</strong> Optional auto-cleaning of previous output files and infrastructure for archiving results.</li>
+                  </ul>
+                </div>
+                <div class="detail-section">
+                  <h5>Configuration & Control</h5>
+                  <ul class="sub-list">
+                    <li><code>config.py</code> – user parameters for dataset paths, model ranges, etc.</li>
+                    <li><code>config_validation.py</code> – validation of config parameters with assertions.</li>
+                    <li><code>controller.py</code> – orchestrates execution flow using validated settings.</li>
+                  </ul>
+                </div>
+                <div class="detail-section">
+                  <h5>Skills Gained</h5>
+                  <ul class="sub-list">
+                    <li>Time series theory and ARIMA/SARIMA modeling techniques</li>
+                    <li>Data preprocessing, cleaning, and resampling strategies</li>
+                    <li>Statistical stationarity testing and diagnostics</li>
+                    <li>Automated model selection and hyperparameter tuning</li>
+                    <li>Cross-validation methodologies for time series</li>
+                    <li>Report generation and pipeline automation</li>
+                    <li>Working with complex configuration files</li>
+                    <li>Code modularization and documentation best practices</li>
+                  </ul>
+                </div>
+                <div class="detail-section">
+                  <h5>Useful Links</h5>
+                  <ul class="sub-list">
+                    <li><a href="https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/README.md" target="_blank">GitHub README</a></li>
+                    <li><a href="https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/tsmodule.py" target="_blank">tsmodule.py (Core Python module)</a></li>
+                    <li><a href="https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/config.py" target="_blank">config.py</a></li>
+                    <li><a href="https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/config_validation.py" target="_blank">config_validation.py</a></li>
+                    <li><a href="https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/controller.py" target="_blank">controller.py</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Protein Data Bank Crystallization Conditions Analysis -->
+    <!-- Protein Data Bank Crystallization Conditions Analysis -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h3 class="card-title">Protein Data Bank Crystallization Conditions Analysis<br><br></h3>
+    <div class="detail-section">
+      <p>This project analyzes crystallization conditions from the Protein Data Bank (PDB) to uncover trends, correlations, and optimal experimental parameters for protein structure determination. The workflow includes automated data extraction, cleaning, and transformation, followed by exploratory data analysis (EDA) and statistical modeling to identify influential chemical and physical factors. Visualizations and summaries highlight patterns in pH, temperature, precipitant composition, and other crystallization variables across thousands of entries.</p>
+      <p><a href="https://at58474.github.io/another-page" target="_blank">Exploratory Data Analysis of Protein Crystallization Conditions</a></p>
+    </div>
+    <div>
+      <p><strong>Technologies &amp; Tools</strong></p>
+      <ul class="tech-list">
+        <li>Python (Pandas, NumPy, Matplotlib, Seaborn)</li>
+        <li>SciPy (statistical analysis &amp; hypothesis testing)</li>
+        <li>BioPython</li>
+        <li>Scikit-Learn (CNNs and classifiers)</li>
+        <li>Multiprocessing</li>
+        <li>Jupyter Notebooks</li>
+        <li>BeautifulSoup &amp; requests (web scraping PDB data)</li>
+        <li>Regex / Text processing</li>
+        <li>FTP Data Download Automation</li>
+        <li>SQLite database for structured storage and retrieval</li>
+        <li>Custom Python scripts for data parsing and transformation</li>
+        <li>Automated visualization generation and export</li>
+        <li>Data Visualization &amp; Analysis</li>
+      </ul>
+
+      <p><strong>Statistical Methods</strong></p>
+      <ul class="tech-list">
+        <li>Correlation analysis between crystallization variables and experimental outcomes</li>
+        <li>ANOVA &amp; t-tests to assess differences between condition groups</li>
+        <li>Chi-square tests for categorical variables (e.g., precipitant types)</li>
+        <li>Principal Component Analysis (PCA) for dimensionality reduction</li>
+        <li>Clustering (k-means, hierarchical) for grouping similar crystallization profiles</li>
+        <li>Outlier detection and treatment in crystallization datasets</li>
+      </ul>
+
+      <p><strong>Data Processing &amp; Analysis Techniques</strong></p>
+      <ul class="tech-list">
+        <li>Automated retrieval and parsing of PDB crystallization metadata</li>
+        <li>Standardization of units and categorical variables (e.g., buffer types, precipitant categories)</li>
+        <li>Data cleaning: missing value imputation, duplicate removal, and normalization</li>
+        <li>Feature engineering (e.g., grouping related chemicals, calculating ionic strengths)</li>
+        <li>Aggregation and filtering for specific protein families or resolution ranges</li>
+        <li>Visualization of variable distributions, correlations, and clustering results</li>
+        <li>Export of cleaned datasets, figures, and statistical summaries for publication or reuse</li>
+      </ul>
+    </div>
+
+
+        <div class="accordion" id="accordionPDB">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingPDB">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePDB">Full Project Details</button>
+            </h2>
+            <div id="collapsePDB" class="accordion-collapse collapse" aria-labelledby="headingPDB" data-bs-parent="#accordionPDB">
+              <div class="accordion-body">
+  <div class="detail-section">
+    <h5>Project Summary</h5>
+    <p>This project focuses on the large-scale extraction, cleaning, and analysis of protein crystallization condition data from the Protein Data Bank (PDB), a global repository of experimentally determined macromolecular structures. Using a dataset of 204,170 PDB files (290 GB) downloaded from the official PDB FTP servers, the project targets protein-only entries—excluding DNA, RNA, and computational models such as AlphaFold predictions—to retain only experimentally validated structures.</p>
+    <p>The workflow involves automated data extraction, cleaning, and transformation, followed by exploratory data analysis (EDA) and statistical modeling to uncover key crystallization parameters, trends, correlations, and optimal experimental conditions. Visualizations and summaries highlight patterns in pH, temperature, precipitant composition, and other critical crystallization variables across thousands of entries, aiming to inform and improve experimental design for novel protein structures.</p>
+  </div>
+  <div class="detail-section">
+    <h5>Primary Goals</h5>
+    <ul class="tech-list">
+      <li><strong>Data Extraction</strong> – Parse each PDB file to extract:
+        <ul>
+          <li>Protein ID</li>
+          <li>FASTA sequence</li>
+          <li>Solvent concentration</li>
+          <li>Matthew’s coefficient</li>
+          <li>Crystallography type and vapor diffusion method</li>
+          <li>pH</li>
+          <li>Organic and salt precipitates (categorized by concentration units)</li>
+        </ul>
+      </li>
+      <li><strong>Data Analysis &amp; Modeling</strong> – Generate visual and statistical insights into crystallization trends, and explore deep learning-based predictive modeling for crystallization conditions from FASTA sequences.</li>
+    </ul>
+  </div>
+  <div class="detail-section">
+    <h5>Data Collection &amp; Preprocessing</h5>
+    <ul class="tech-list">
+      <li>Downloaded 204,170 .ent.gz PDB files from ftp.wwpdb.org/pub/pdb/data/structures/all</li>
+      <li>Decompressed files using 7zip CLI</li>
+      <li>Converted .ent to .pdb format via a multiprocessing-enabled Python script</li>
+    </ul>
+  </div>
+  <div class="detail-section">
+    <h5>Core Extraction Module: ccmodule.py (892 lines)</h5>
+    <ol>
+      <li><strong>PDBPreprocessingSequences</strong>
+        <ul class="tech-list">
+          <li>Extracts primary sequences from SEQRES records and converts them to FASTA format using BioPython.</li>
+          <li>Stores sequences for integration into the master DataFrame via protein ID matching.</li>
+          <li>Handles multiprocessing across all CPU cores for speed.</li>
+          <li><em>Note:</em> SEQRES sequences may differ from ATOM-based sequences due to cleaved tags or loops, potentially impacting predictive modeling.</li>
+        </ul>
+      </li>
+      <li><strong>PDBCrystallizationConditions</strong> – Handles condition-specific data extraction, including:
+        <ul class="tech-list">
+          <li>extract_remark_280() – Retrieves all crystallization notes from REMARK 280 sections.</li>
+          <li>extract_solvent_content() – Solvent content (%).</li>
+          <li>extract_matthews_coefficient() – Crystal packing density measure.</li>
+          <li>extract_crystallography_type() – Categorizes crystallization method (e.g., Vapor Diffusion, Dialysis, Batch).</li>
+          <li>extract_vapor_diffusion_type() – Distinguishes between Hanging Drop and Sitting Drop methods.</li>
+          <li>extract_ph() – pH values of mother liquor solutions.</li>
+          <li>extract_organic_precipitates() – Uses REGEX and fuzzy matching to capture percentage-based organic compounds, correcting typos and mislabeled entries.</li>
+          <li>extract_salt_precipitates() – Identifies molarity-based inorganic salts.</li>
+        </ul>
+      </li>
+      <li><strong>ConvertToPDB</strong>
+        <ul class="tech-list">
+          <li>Multiprocessing-based .ent → .pdb converter.</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <div class="detail-section">
+    <h5>Analytical Insights Generated</h5>
+    <ul class="tech-list">
+      <li>Missing Data Analysis: Tables and bar charts summarizing null distributions.</li>
+      <li>Nullity Correlation Heatmap: Identifies dependencies between missing fields.</li>
+      <li>Chemical Usage Statistics:
+        <ul>
+          <li>Comprehensive list of all unique chemicals with occurrence counts.</li>
+          <li>Top 10 most common chemicals (tabular, pie chart).</li>
+          <li>Scatter plots showing concentration distribution per chemical.</li>
+        </ul>
+      </li>
+      <li>pH Trends:
+        <ul>
+          <li>Distribution of all recorded pH values.</li>
+          <li>Grouped pH frequency charts (integer bins).</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="detail-section">
+    <h5>Deep Learning Component</h5>
+    <ul class="tech-list">
+      <li>Objective: Predict optimal crystallization conditions (pH, temperature, chemical composition) from FASTA sequences using supervised models (e.g., CNNs).</li>
+      <li>Approach: Train on extracted experimental conditions and sequence data to provide predictions for uncharacterized proteins.</li>
+      <li>Potential Impact: Could accelerate experimental design and improve crystal yield for novel proteins.</li>
+    </ul>
+  </div>
+  <div class="detail-section">
+    <h5>Skills Gained</h5>
+    <ul class="tech-list">
+        <li>Handling massive biological datasets</li>
+        <li>Advanced text parsing and regular expressions</li>
+        <li>Multiprocessing and parallelization</li>
+        <li>Biopython for structural bioinformatics</li>
+        <li>Deep learning for biological sequence data</li>
+        <li>Data cleaning and normalization techniques</li>
+        <li>Scientific visualization</li>
+        <li>Model development and evaluation</li>
+    </ul>
+  </div>
+  <div class="detail-section">
+    <h5>Impact &amp; Future Directions</h5>
+    <p>This work produced one of the most comprehensive datasets of protein crystallization conditions available directly from the PDB. Its structured format enables:</p>
+    <ul class="tech-list">
+      <li>Statistical analyses of crystallization trends.</li>
+      <li>Integration into predictive modeling pipelines.</li>
+    </ul>
+    <p>Potential future modules include:</p>
+    <ul class="tech-list">
+      <li>ATOM-coordinate-based sequence extraction.</li>
+      <li>Identification of structural modifications affecting crystallization.</li>
+      <li>Expanded machine learning model training.</li>
+    </ul>
+  </div>
+                  <div class="detail-section">
+                  <h5>Useful Links</h5>
+                  <ul class="sub-list">
+                    <li><a href="https://github.com/at58474/Crystallization-Conditions" target="_blank">GitHub Repo</a></li>
+                  </ul>
+                </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- 3. Climbing Conditions Web App -->
+<div class="card mb-4">
+  <div class="card-body">
+    <h3 class="card-title">Climbing Conditions Web App<br><br></h3>
+    <div class="detail-section">
+      <p>This project is a full-stack Flask web app that fetches live and forecast weather data from OpenWeatherMap, uses a machine learning model (Random Forest or Decision Tree) to calculate a Climbing Conditions Score, and presents interactive visualizations with Plotly on the frontend. It helps climbers plan trips by providing real-time, location-specific weather insights and predictive scoring.</p>
+      <p><a href="https://www.climbingconditions.com/" target="_blank">Live Climbing Conditions Website</a></p>
+    </div>
+    <div class="detail-section">
+      <p><strong>Technology Stack</strong></p>
+      <ul class="tech-list">
+        <li><strong>Backend:</strong>
+          <ul>
+            <li>Python 3.x</li>
+            <li>Flask</li>
+            <li>SQLite3 (database engine)</li>
+            <li>scikit-learn (RandomForestRegressor, DecisionTreeRegressor)</li>
+            <li>joblib (model serialization/loading)</li>
+            <li>requests (OpenWeatherMap API consumption)</li>
+            <li>dateutil (datetime parsing and manipulation)</li>
+            <li>Python logging (error tracking and debugging)</li>
+            <li>Virtual environment and dependency management (e.g., venv, pip)</li>
+          </ul>
+        </li>
+        <li><strong>Frontend:</strong>
+          <ul>
+            <li>JavaScript (ES6, Fetch API)</li>
+            <li>Plotly.js (interactive graphs)</li>
+            <li>HTML5 / CSS3</li>
+            <li>Bootstrap 5</li>
+            <li>LocalStorage API (storing user preferences like selected destination)</li>
+            <li>Event listeners and DOM manipulation (UI interactivity)</li>
+            <li>Responsive design techniques (media queries, flexbox, grid)</li>
+            <li>Accessibility best practices (ARIA roles, keyboard navigation)</li>
+          </ul>
+        </li>
+        <li><strong>Data Source:</strong> OpenWeatherMap One Call API (v2.5)(v3.0), Open-Meteo API</li>
+        <li><strong>Additional Features:</strong>
+          <ul>
+            <li>Time zone handling (conversion of UTC timestamps to local time)</li>
+            <li>RESTful API design</li>
+          </ul>
+        </li>
+        <li><strong>Model Input:</strong>
+          <ul>
+            <li>Humidity (%)</li>
+            <li>Temperature (°C)</li>
+          </ul>
+        </li>
+        <li><strong>Output:</strong> Climbing Conditions Score (0–10 scale)</li>
+        <li><strong>Machine Learning / Data Processing:</strong>
+          <ul>
+            <li>Feature engineering (handling dew point, rainfall aggregation)</li>
+            <li>Model evaluation and validation (cross-validation, performance metrics)</li>
+            <li>Prediction serialization and JSON handling</li>
+          </ul>
+        </li>
+        <li><strong>Deployment / DevOps:</strong>
+          <ul>
+            <li>Version control (Git)</li>
+            <li>Testing frameworks (pytest for backend, Jest for frontend)</li>
+            <li>Continuous integration and deployment (GitHub Actions, Travis CI)</li>
+            <li>AWS Cloud Hosting: Route 53, EC2, Elastic Beanstalk, IAM, and associated services used for full web app deployment and management</li>
+            <li>Continuous integration and deployment (GitHub Actions, Travis CI)</li>
+          </ul>
+        </li>
+        <li><strong>Security:</strong>
+          <ul>
+            <li>Input validation and sanitization (prevent injection attacks)</li>
+            <li>HTTPS / SSL (secure data transmission)</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="accordion" id="accordionClimb">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingClimb">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseClimb" aria-expanded="false" aria-controls="collapseClimb">
+            Full Project Details
+          </button>
+        </h2>
+        <div id="collapseClimb" class="accordion-collapse collapse" aria-labelledby="headingClimb" data-bs-parent="#accordionClimb">
+          <div class="accordion-body">
+            <div class="detail-section">
+                <h5>Project Summary</h5>
+                <p>This project is a full-stack Flask web application that retrieves live and forecasted weather data from the OpenWeatherMap API, processes it in Python, and uses a trained RandomForestRegressor machine learning model to calculate a Climbing Conditions Score (CCS). The system presents this information in an interactive, mobile-friendly frontend using JavaScript and Plotly, with visualizations and forecast cards that update in real time.</p>
+                <p>It integrates machine learning, API consumption, time zone handling, weather data aggregation, and data visualization into a seamless user experience for climbers looking to plan their trips based on local weather and predictive scoring.</p>
+            </div>
+            <div class="detail-section">
+              <h5>Architecture</h5>
+              <h6>Backend (Flask / Python):</h6>
+              <ul>
+                <li><strong>Weather Data Retrieval</strong>
+                  <ul>
+                    <li>Uses OpenWeatherMap API to fetch current and future conditions/forecasts</li>
+                    <li>Uses open-meteo to fetch historical weather data for personalized user input and model training</li>
+                    <li>Forecast cards display daily min/max temperature, humidity, and CCS</li>
+                    <li>Converts all dates/times to user’s local time zone using a <code>tz_offset</code> parameter</li>
+                  </ul>
+                </li>
+                <li><strong>Feature Extraction</strong>
+                  <ul>
+                    <li>Extracts temperature (°C), humidity (%), dew point (°C; retrieved but unused in model)</li>
+                    <li>Computes total daily rainfall accumulation for forecast cards</li>
+                  </ul>
+                </li>
+                <li><strong>Machine Learning Prediction</strong>
+                  <ul>
+                    <li>Loads a pre-trained RandomForestRegressor model (<code>model.pkl</code>) via joblib</li>
+                    <li>Inputs: Humidity and Temperature</li>
+                    <li>Outputs: Climbing Conditions Score (0–10 scale), higher = better conditions</li>
+                    <li>Generates predictions for current conditions and daily forecast periods</li>
+                  </ul>
+                </li>
+                <li><strong>API Endpoints</strong>
+                  <ul>
+                    <li><code>/all_data</code>: Returns combined current + forecast weather data with CCS in JSON</li>
+                    <li>Handles time zone conversion so frontend timestamps are always local</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h6>Frontend (JavaScript + Plotly):</h6>
+              <ul>
+                <li><strong>Data Fetching & Rendering</strong>
+                  <ul>
+                    <li>Detects user’s local time zone offset on load</li>
+                    <li>Calls <code>/all_data?tz_offset={offset}</code> to fetch weather + CCS data</li>
+                    <li>Updates current conditions widget with CCS score, temperature, humidity, weather description, and local last-update time</li>
+                  </ul>
+                </li>
+                <li><strong>Forecast Cards</strong>
+                  <ul>
+                    <li>Displays 7-day forecasts with min/max temperature, humidity, predicted CCS, and total rainfall</li>
+                    <li>Dates shown in local time zone</li>
+                  </ul>
+                </li>
+                <li><strong>Graphs & Visualization</strong>
+                  <ul>
+                    <li>Uses Plotly.js for interactive line charts of temperature, humidity, and CCS over time</li>
+                    <li>X-axis labels and hover tooltips use local times</li>
+                  </ul>
+                </li>
+                <li><strong>Interactivity</strong>
+                  <ul>
+                    <li>Swipeable forecast cards</li>
+                    <li>Full-screen toggle for charts</li>
+                    <li>Smooth data update transitions</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h5>Machine Learning Model</h5>
+              <ul>
+                <li><strong>Model Choice:</strong>
+                  <ul>
+                    <li><strong>Random Forest Regression:</strong>
+                      <ul>
+                        <li>Robust to non-linear relationships</li>
+                        <li>Resistant to overfitting with small to medium datasets</li>
+                        <li>Handles mixed seasonal/weather variations without explicit feature engineering</li>
+                      </ul>
+                    </li>
+                    <li><strong>Decision Tree Regression (also supported):</strong>
+                      <ul>
+                        <li>Simpler, more interpretable model</li>
+                        <li>Faster predictions, lower computational cost</li>
+                        <li>Easier debugging and understanding of decision paths</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><strong>Features Used:</strong>
+                  <ul>
+                    <li>Humidity (%) — affects rock surface friction</li>
+                    <li>Temperature (°C) — impacts climber comfort and rock conditions</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h5>Key Technical Features & Challenges Solved</h5>
+              <ul>
+                <li><strong>Time Zone Handling:</strong> Converts OpenWeatherMap UTC timestamps to user local time on backend using <code>tz_offset</code>, ensuring accurate display in graphs, tooltips, and cards</li>
+                <li><strong>Clear Separation of Current vs Forecast Data:</strong> Keeps real-time and forecast predictions distinct for accuracy</li>
+                <li><strong>Rainfall Aggregation:</strong> Aggregates hourly precipitation data into total daily rainfall for forecast cards</li>
+                <li><strong>Responsive, Mobile-Friendly UI:</strong> Adaptive cards and graphs with swipe navigation</li>
+                <li><strong>API Integration Efficiency:</strong> Combines current and daily weather data into a single Flask endpoint to minimize frontend calls</li>
+                <li><strong>Personalized Climbing Condition Scores:</strong> Accepts user input where personalized scores can be submitted from cached historical weather conditions, stored in Sqlite database</li>
+                <li><strong>Model Improvement:</strong> Uses the user submitted personalized scores to re-train the random forest and decision tree models to make more accurate predictions based on a more inclusive dataset</li>
+              </ul>
+
+              <h5>Skills Gained</h5>
+              <ul>
+                <li>API integration with third-party weather services</li>
+                <li>Feature engineering and predictive modeling with scikit-learn</li>
+                <li>Full-stack development (Flask backend, JavaScript frontend)</li>
+                <li>Data visualization with Plotly</li>
+                <li>Time zone management in distributed systems</li>
+                <li>Performance optimization for API and rendering</li>
+              </ul>
+                <div class="detail-section">
+                  <h5>Useful Links</h5>
+                  <ul class="sub-list">
+                    <li><a href="https://github.com/at58474/climbing-conditions-app" target="_blank">GitHub Repo</a></li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
