@@ -105,12 +105,12 @@
                 </div>
                 <div class="detail-section">
                   <h5>Key Features & Workflow</h5>
-                  <ul class="sub-list">
+                  <ul class="tech-list">
                     <li><strong>Preprocessing:</strong> merging multiple datasets, imputing missing data, removing duplicates, renaming/deleting columns with configuration support.</li>
                     <li><strong>Resampling:</strong> multi-frequency resampling (first, mean, max) with optional row cap to speed processing.</li>
                     <li><strong>Stationarity & Decomposition:</strong> Automated ADF test with differencing, ACF and PACF plots, and seasonal-trend-residual decomposition visualizations.</li>
                     <li><strong>Modeling:</strong>
-                      <ul class="sub-list">
+                      <ul>
                         <li>In-sample, rolling 1-step ahead, and out-of-sample forecasting using ARIMA and SARIMA.</li>
                         <li>Performance metrics generated for each model variant: AIC, RMSE, MAPE, comparing predict() vs forecast().</li>
                       </ul>
@@ -123,7 +123,7 @@
                 </div>
                 <div class="detail-section">
                   <h5>Configuration & Control</h5>
-                  <ul class="sub-list">
+                  <ul class="tech-list">
                     <li><code>config.py</code> – user parameters for dataset paths, model ranges, etc.</li>
                     <li><code>config_validation.py</code> – validation of config parameters with assertions.</li>
                     <li><code>controller.py</code> – orchestrates execution flow using validated settings.</li>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="detail-section">
                   <h5>Skills Gained</h5>
-                  <ul class="sub-list">
+                  <ul class="tech-list">
                     <li>Time series theory and ARIMA/SARIMA modeling techniques</li>
                     <li>Data preprocessing, cleaning, and resampling strategies</li>
                     <li>Statistical stationarity testing and diagnostics</li>
@@ -144,7 +144,7 @@
                 </div>
                 <div class="detail-section">
                   <h5>Useful Links</h5>
-                  <ul class="sub-list">
+                  <ul class="tech-list">
                     <li><a href="https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/README.md" target="_blank">GitHub README</a></li>
                     <li><a href="https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/tsmodule.py" target="_blank">tsmodule.py (Core Python module)</a></li>
                     <li><a href="https://github.com/at58474/Time-Series-ARIMA-SARIMA/blob/main/config.py" target="_blank">config.py</a></li>
@@ -223,9 +223,9 @@
   </div>
   <div class="detail-section">
     <h5>Primary Goals</h5>
-    <ul class="tech-list">
+
       <li><strong>Data Extraction</strong> – Parse each PDB file to extract:
-        <ul>
+        <ul class="tech-list">
           <li>Protein ID</li>
           <li>FASTA sequence</li>
           <li>Solvent concentration</li>
@@ -236,7 +236,7 @@
         </ul>
       </li>
       <li><strong>Data Analysis &amp; Modeling</strong> – Generate visual and statistical insights into crystallization trends, and explore deep learning-based predictive modeling for crystallization conditions from FASTA sequences.</li>
-    </ul>
+
   </div>
   <div class="detail-section">
     <h5>Data Collection &amp; Preprocessing</h5>
@@ -248,7 +248,7 @@
   </div>
   <div class="detail-section">
     <h5>Core Extraction Module: ccmodule.py (892 lines)</h5>
-    <ol>
+
       <li><strong>PDBPreprocessingSequences</strong>
         <ul class="tech-list">
           <li>Extracts primary sequences from SEQRES records and converts them to FASTA format using BioPython.</li>
@@ -274,7 +274,7 @@
           <li>Multiprocessing-based .ent → .pdb converter.</li>
         </ul>
       </li>
-    </ol>
+
   </div>
   <div class="detail-section">
     <h5>Analytical Insights Generated</h5>
@@ -356,9 +356,9 @@
     </div>
     <div class="detail-section">
       <p><strong>Technology Stack</strong></p>
-      <ul class="tech-list">
-        <li><strong>Backend:</strong>
-          <ul>
+
+        <strong>Backend:</strong>
+          <ul class="tech-list">
             <li>Python 3.x</li>
             <li>Flask</li>
             <li>SQLite3 (database engine)</li>
@@ -369,9 +369,9 @@
             <li>Python logging (error tracking and debugging)</li>
             <li>Virtual environment and dependency management (e.g., venv, pip)</li>
           </ul>
-        </li>
-        <li><strong>Frontend:</strong>
-          <ul>
+
+        <strong>Frontend:</strong>
+          <ul class="tech-list">
             <li>JavaScript (ES6, Fetch API)</li>
             <li>Plotly.js (interactive graphs)</li>
             <li>HTML5 / CSS3</li>
@@ -381,44 +381,41 @@
             <li>Responsive design techniques (media queries, flexbox, grid)</li>
             <li>Accessibility best practices (ARIA roles, keyboard navigation)</li>
           </ul>
-        </li>
-        <li><strong>Data Source:</strong> OpenWeatherMap One Call API (v2.5)(v3.0), Open-Meteo API</li>
-        <li><strong>Additional Features:</strong>
-          <ul>
+
+        <strong>Data Source:</strong>
+        <ul class="tech-list">
+            <li>OpenWeatherMap One Call API (v2.5)(v3.0)</li>
+            <li>Open-Meteo API</li>
+          </ul>
+        <strong>Additional Features:</strong>
+          <ul class="tech-list">
             <li>Time zone handling (conversion of UTC timestamps to local time)</li>
             <li>RESTful API design</li>
           </ul>
-        </li>
-        <li><strong>Model Input:</strong>
-          <ul>
-            <li>Humidity (%)</li>
-            <li>Temperature (°C)</li>
-          </ul>
-        </li>
-        <li><strong>Output:</strong> Climbing Conditions Score (0–10 scale)</li>
-        <li><strong>Machine Learning / Data Processing:</strong>
-          <ul>
+
+        <strong>Machine Learning / Data Processing:</strong>
+          <ul class="tech-list">
             <li>Feature engineering (handling dew point, rainfall aggregation)</li>
             <li>Model evaluation and validation (cross-validation, performance metrics)</li>
             <li>Prediction serialization and JSON handling</li>
           </ul>
-        </li>
-        <li><strong>Deployment / DevOps:</strong>
-          <ul>
+
+        <strong>Deployment / DevOps:</strong>
+          <ul class="tech-list">
             <li>Version control (Git)</li>
             <li>Testing frameworks (pytest for backend, Jest for frontend)</li>
             <li>Continuous integration and deployment (GitHub Actions, Travis CI)</li>
             <li>AWS Cloud Hosting: Route 53, EC2, Elastic Beanstalk, IAM, and associated services used for full web app deployment and management</li>
             <li>Continuous integration and deployment (GitHub Actions, Travis CI)</li>
           </ul>
-        </li>
-        <li><strong>Security:</strong>
-          <ul>
+
+        <strong>Security:</strong>
+          <ul class="tech-list">
             <li>Input validation and sanitization (prevent injection attacks)</li>
             <li>HTTPS / SSL (secure data transmission)</li>
           </ul>
-        </li>
-      </ul>
+
+
     </div>
 
     <div class="accordion" id="accordionClimb">
